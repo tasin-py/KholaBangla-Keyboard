@@ -17,8 +17,8 @@ REPO="tasin-py/KholaBangla"
 # list below) is only used when GitHub can't be asked which release is newest.
 FALLBACK_VERSION="1.0.0"
 APP_VERSION="${OB_VERSION:-}"
-WIKI_INSTALL="https://github.com/${REPO}/wiki/Installing-KholaBangla-Keyboard"
-WIKI_CONFIG="https://github.com/${REPO}/wiki/Configuring-Environment"
+WIKI_INSTALL="https://github.com/${REPO}#building-from-source"
+WIKI_CONFIG="https://github.com/${REPO}#troubleshooting"
 PKG_NAME="kholabangla-keyboard"
 IBUS_ENGINE="KholaBangla"   # engine name in data/kholabangla.xml.in
 FCITX_IM="kholabangla"      # input method name from src/engine/fcitx/kholabangla.conf
@@ -361,7 +361,7 @@ choose_package() {
       case "$OS_ID" in
         *tumbleweed*|*slowroll*)
           PACKAGE_FILE=$(printf '%s\n' "$ASSETS" | grep -m1 -i -- '-opensuse-tumbleweed.*\.rpm$') ;;
-        *) [ -n "$(printf '%s\n' "$ASSETS" | grep -i -- '-opensuse-')" ] \
+        *) printf '%s\n' "$ASSETS" | grep -qi -- '-opensuse-' \
              && PACKAGE_NOTE="Only openSUSE Tumbleweed has a ready-made package; ${OS_NAME:-this version} isn't supported yet." ;;
       esac
       [ -z "$PACKAGE_FILE" ] && [ -z "$PACKAGE_NOTE" ] && PACKAGE_NOTE="There's no ready-made package for openSUSE in KholaBangla Keyboard ${APP_VERSION}."
