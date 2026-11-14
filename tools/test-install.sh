@@ -13,7 +13,7 @@ INSTALLER="$HERE/install.sh"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 
-V="1.0.0"
+V="1.0.1"
 P="kholabangla-keyboard_$V"
 export OB_VERSION="$V"
 export OB_ASSETS="$P-archlinux-x86_64.pkg.tar.zst

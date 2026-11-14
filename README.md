@@ -108,6 +108,7 @@ easy to install and use on any Linux system:
 - **Fixed missing dependency.** Qt SVG is now required by the package, so icons always show.
 - **The 3.0 features, ready to use.** The new light/dark design, the Avro-style Top Bar and the Khipro
   layout from the 3.0 development version, packaged and released.
+- **Updates built in.** The app checks for new versions once a day and updates itself in one click.
 - **Linux only**, with its own tested build, installer tests and release workflow.
 
 ## Features
@@ -128,6 +129,7 @@ easy to install and use on any Linux system:
 - Avro-style **Top Bar** for quick configuration, and a built-in **Layout Viewer**.
 - Follows your system's light or dark theme.
 - Sets itself up in your desktop's input sources.
+- Checks for updates and installs them in one click (tray menu → **Updates**).
 
 ## Uninstall
 

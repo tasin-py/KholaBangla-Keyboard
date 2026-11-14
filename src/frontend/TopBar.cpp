@@ -36,6 +36,7 @@
 #include "LayoutConverter.h"
 #include "AutoCorrectDialog.h"
 #include "PlatformConfig.h"
+#include "UpdateChecker.h"
 #include "FileSystem.h"
 #include "ui_TopBar.h"
 
@@ -87,6 +88,8 @@ TopBar::TopBar(bool darkIcon, QWidget *parent) :
   set_icon(ui->buttonSettings, "settings");
   set_icon(ui->buttonShutdown, "close");
   ui->buttonIcon->installEventFilter(this);
+
+  updater = new UpdateChecker(this, this);
 
   SetupTopBar();
   SetupPopupMenus();
@@ -174,12 +177,16 @@ void TopBar::SetupPopupMenus() {
   iconMenuAbout = new QAction("About KholaBangla Keyboard", this);
   connect(iconMenuAbout, SIGNAL(triggered()), this, SLOT(iconMenuAbout_clicked()));
 
+  iconMenuUpdate = new QAction("Check for updates", this);
+  connect(iconMenuUpdate, &QAction::triggered, [&]() { updater->check(true); });
+
   iconMenu = new QMenu(this);
   // Gnome Shell and Pantheon doesn't support tray icon natively.
   if(shouldShowTrayIcon()) {
     iconMenu->addAction(iconMenuHide);
   }
   iconMenu->addAction(iconMenuLayout);
+  iconMenu->addAction(iconMenuUpdate);
   iconMenu->addAction(iconMenuAbout);
 }
 
@@ -230,11 +237,23 @@ void TopBar::SetupTrayIcon() {
   trayQuit = new QAction("Quit", this);
   connect(trayQuit, &QAction::triggered, this, &TopBar::on_buttonShutdown_clicked);
 
+  /* Updates Menu */
+  trayUpdates = new QMenu("Updates", this);
+  trayUpdateCheck = new QAction("Check for updates now", this);
+  connect(trayUpdateCheck, &QAction::triggered, [&]() { updater->check(true); });
+  trayUpdateAuto = new QAction("Check automatically", this);
+  trayUpdateAuto->setCheckable(true);
+  trayUpdateAuto->setChecked(updater->autoCheckEnabled());
+  connect(trayUpdateAuto, &QAction::toggled, [&](bool on) { updater->setAutoCheckEnabled(on); });
+  trayUpdates->addAction(trayUpdateCheck);
+  trayUpdates->addAction(trayUpdateAuto);
+
   trayMenu = new QMenu(this);
   trayMenu->addMenu(layoutMenu); // Layout Menu
   trayMenu->addMenu(trayOutputMode);
   trayMenu->addAction(trayLayoutViewer);
   trayMenu->addAction(traySettings);
+  trayMenu->addMenu(trayUpdates);
   trayMenu->addSeparator();
   trayMenu->addAction(trayTopBarVisibility);
   trayMenu->addAction(trayQuit);

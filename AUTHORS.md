@@ -23,6 +23,7 @@ KholaBangla Keyboard:
 - removed the Windows and macOS ports to focus on Linux;
 - added a one-command installer for Ubuntu, Debian, Kali, Fedora, openSUSE, Arch and their derivatives;
 - made package installation safe without a desktop session, and added Qt SVG to the package dependencies;
+- added a check for updates with one-click update;
 - added its own build, test and release workflows.
 
 ## Third-party components

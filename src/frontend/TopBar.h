@@ -43,7 +43,7 @@ class SettingsDialog;
 
 class AutoCorrectDialog;
 
-class QSimpleUpdater;
+class UpdateChecker;
 
 class TopBar : public QMainWindow {
 Q_OBJECT
@@ -105,6 +105,7 @@ private:
   QAction *iconMenuLayout;
   QAction *iconMenuAbout;
   QAction *iconMenuUpdate;
+  UpdateChecker *updater;
 
   /* Tray Popup Menu */
   QMenu *trayMenu;
@@ -115,6 +116,9 @@ private:
   QAction *trayLayoutViewer;
   QAction *traySettings;
   QAction *trayTopBarVisibility;
+  QMenu *trayUpdates;
+  QAction *trayUpdateCheck;
+  QAction *trayUpdateAuto;
   QAction *trayQuit;
 
   void SetupTopBar();
@@ -122,8 +126,6 @@ private:
   void SetupPopupMenus();
 
   void SetupTrayIcon();
-
-  void checkForUpdate();
 
   void RefreshLayouts();
 

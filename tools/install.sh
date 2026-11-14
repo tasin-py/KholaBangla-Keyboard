@@ -15,7 +15,7 @@ set -uo pipefail
 REPO="tasin-py/KholaBangla-Keyboard"
 # The newest release on GitHub is installed. This version (with the package
 # list below) is only used when GitHub can't be asked which release is newest.
-FALLBACK_VERSION="1.0.0"
+FALLBACK_VERSION="1.0.1"
 APP_VERSION="${OB_VERSION:-}"
 WIKI_INSTALL="https://github.com/${REPO}#building-from-source"
 WIKI_CONFIG="https://github.com/${REPO}#troubleshooting"
@@ -27,21 +27,21 @@ FCITX_IM="kholabangla"      # input method name from src/engine/fcitx/kholabangl
 # be reached; normally the list is read from the release page itself so new
 # releases and uploads are picked up without editing this script.
 FALLBACK_ASSETS="
-kholabangla-keyboard_1.0.0-archlinux-x86_64.pkg.tar.zst
-kholabangla-keyboard_1.0.0-debian12_amd64.deb
-kholabangla-keyboard_1.0.0-debian12_arm64.deb
-kholabangla-keyboard_1.0.0-debian13_amd64.deb
-kholabangla-keyboard_1.0.0-debian13_arm64.deb
-kholabangla-keyboard_1.0.0-fedora41.aarch64.rpm
-kholabangla-keyboard_1.0.0-fedora41.x86_64.rpm
-kholabangla-keyboard_1.0.0-fedora42.aarch64.rpm
-kholabangla-keyboard_1.0.0-fedora42.x86_64.rpm
-kholabangla-keyboard_1.0.0-opensuse-tumbleweed.aarch64.rpm
-kholabangla-keyboard_1.0.0-opensuse-tumbleweed.x86_64.rpm
-kholabangla-keyboard_1.0.0-ubuntu22.04_amd64.deb
-kholabangla-keyboard_1.0.0-ubuntu22.04_arm64.deb
-kholabangla-keyboard_1.0.0-ubuntu24.04_amd64.deb
-kholabangla-keyboard_1.0.0-ubuntu24.04_arm64.deb
+kholabangla-keyboard_1.0.1-archlinux-x86_64.pkg.tar.zst
+kholabangla-keyboard_1.0.1-debian12_amd64.deb
+kholabangla-keyboard_1.0.1-debian12_arm64.deb
+kholabangla-keyboard_1.0.1-debian13_amd64.deb
+kholabangla-keyboard_1.0.1-debian13_arm64.deb
+kholabangla-keyboard_1.0.1-fedora41.aarch64.rpm
+kholabangla-keyboard_1.0.1-fedora41.x86_64.rpm
+kholabangla-keyboard_1.0.1-fedora42.aarch64.rpm
+kholabangla-keyboard_1.0.1-fedora42.x86_64.rpm
+kholabangla-keyboard_1.0.1-opensuse-tumbleweed.aarch64.rpm
+kholabangla-keyboard_1.0.1-opensuse-tumbleweed.x86_64.rpm
+kholabangla-keyboard_1.0.1-ubuntu22.04_amd64.deb
+kholabangla-keyboard_1.0.1-ubuntu22.04_arm64.deb
+kholabangla-keyboard_1.0.1-ubuntu24.04_amd64.deb
+kholabangla-keyboard_1.0.1-ubuntu24.04_arm64.deb
 "
 
 # Ubuntu codenames, so Ubuntu-based distros (Mint, Pop!_OS, Zorin, elementary,

@@ -13,6 +13,7 @@ set(SRC_GUI TopBar.cpp
         SettingsDialog.cpp
         ToggleSwitch.cpp
         AutoCorrectDialog.cpp
+        UpdateChecker.cpp
         images.qrc)
 
 set(SRC_MAIN main.cpp
