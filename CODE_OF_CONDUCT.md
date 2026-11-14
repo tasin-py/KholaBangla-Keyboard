@@ -61,7 +61,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement by
-[opening an issue](https://github.com/tasin-py/KholaBangla/issues) or contacting
+[opening an issue](https://github.com/tasin-py/KholaBangla-Keyboard/issues) or contacting
 [tasin-py](https://github.com/tasin-py) on GitHub.
 All complaints will be reviewed and investigated promptly and fairly.
 

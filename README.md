@@ -9,8 +9,8 @@
 <h3 align="center">Type Bangla on Linux, the way you type it on Avro. Installed with one command.</h3>
 
 <p align="center">
-  <a href="https://github.com/tasin-py/KholaBangla/releases"><img src="https://img.shields.io/github/v/release/tasin-py/KholaBangla?label=release" alt="Latest release"></a>
-  <a href="https://github.com/tasin-py/KholaBangla/actions/workflows/ci.yml"><img src="https://github.com/tasin-py/KholaBangla/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
+  <a href="https://github.com/tasin-py/KholaBangla-Keyboard/releases"><img src="https://img.shields.io/github/v/release/tasin-py/KholaBangla-Keyboard?label=release" alt="Latest release"></a>
+  <a href="https://github.com/tasin-py/KholaBangla-Keyboard/actions/workflows/ci.yml"><img src="https://github.com/tasin-py/KholaBangla-Keyboard/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPL--3.0-blue.svg" alt="License: GPL-3.0"></a>
 </p>
 
@@ -39,7 +39,7 @@ National/Jatiya, Bornona, Avro Easy, Khipro) and typing automation tools. It wor
 Open a terminal, paste this **one command**, and press <kbd>Enter</kbd>:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh)"
 ```
 
 That's it. The installer:
@@ -132,7 +132,7 @@ easy to install and use on any Linux system:
 ## Uninstall
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh)" -- --uninstall
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh)" -- --uninstall
 ```
 
 Or remove the `kholabangla-keyboard` package with your package manager.
@@ -151,7 +151,7 @@ session has the matching `GTK_IM_MODULE`, `QT_IM_MODULE` and `XMODIFIERS` settin
 Open *System Settings → Keyboard → Virtual Keyboard* and choose *Fcitx 5*.
 
 **"Couldn't recognise your Linux distribution".**
-Please [open an issue](https://github.com/tasin-py/KholaBangla/issues) with the output of `cat /etc/os-release`.
+Please [open an issue](https://github.com/tasin-py/KholaBangla-Keyboard/issues) with the output of `cat /etc/os-release`.
 In the meantime, you can [build from source](#building-from-source).
 
 ## Building from source
@@ -168,7 +168,7 @@ Install the build tools for your distribution:
 Then build and install:
 
 ```bash
-git clone https://github.com/tasin-py/KholaBangla.git
+git clone https://github.com/tasin-py/KholaBangla-Keyboard.git
 cd KholaBangla
 cmake -S . -B build -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_BOTH=ON
 ninja -C build

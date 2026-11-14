@@ -12,7 +12,7 @@
 
 set -uo pipefail
 
-REPO="tasin-py/KholaBangla"
+REPO="tasin-py/KholaBangla-Keyboard"
 # The newest release on GitHub is installed. This version (with the package
 # list below) is only used when GitHub can't be asked which release is newest.
 FALLBACK_VERSION="1.0.0"

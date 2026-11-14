@@ -232,7 +232,7 @@
         <item>
          <widget class="QLabel" name="lblWebsite">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/tasin-py/KholaBangla&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;Website&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/tasin-py/KholaBangla-Keyboard&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;Website&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>
@@ -306,7 +306,7 @@
         <item>
          <widget class="QLabel" name="lblContrib">
           <property name="text">
-           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Made with 💖 by &lt;a href=&quot;https://github.com/tasin-py&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;tasin-py&lt;/span&gt;&lt;/a&gt;. Based on &lt;a href=&quot;https://github.com/tasin-py/KholaBangla&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;KholaBangla Keyboard&lt;/span&gt;&lt;/a&gt; by Muhammad Mominul Huque and contributors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Made with 💖 by &lt;a href=&quot;https://github.com/tasin-py&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;tasin-py&lt;/span&gt;&lt;/a&gt;. Based on &lt;a href=&quot;https://github.com/tasin-py/KholaBangla-Keyboard&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#16a394;&quot;&gt;KholaBangla Keyboard&lt;/span&gt;&lt;/a&gt; by Muhammad Mominul Huque and contributors.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
          </widget>
         </item>

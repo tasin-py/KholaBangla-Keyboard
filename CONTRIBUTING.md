@@ -5,7 +5,7 @@ improvements, documentation and translations are all welcome.
 
 ## Reporting a problem
 
-[Open an issue](https://github.com/tasin-py/KholaBangla/issues) and include:
+[Open an issue](https://github.com/tasin-py/KholaBangla-Keyboard/issues) and include:
 
 - your Linux distribution and version (`cat /etc/os-release`),
 - your desktop (GNOME, KDE Plasma, …) and input method framework (IBus or Fcitx5),

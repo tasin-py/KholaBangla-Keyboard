@@ -381,7 +381,7 @@ void start_setup(bool ibus) {
                                    PROJECT_VERSION,
                                    "GPL 3",
                                    "See AboutBox",
-                                   "https://github.com/tasin-py/KholaBangla",
+                                   "https://github.com/tasin-py/KholaBangla-Keyboard",
                                    LIBEXECDIR "/ibus-engine-kholabangla --ibus",
                                    "kholabangla-keyboard"
     );

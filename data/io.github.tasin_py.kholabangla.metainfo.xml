@@ -16,7 +16,7 @@
         </p>
     </description>
     <project_license>GPL-3.0+</project_license>
-    <url type="homepage">https://github.com/tasin-py/KholaBangla</url>
-    <url type="bugtracker">https://github.com/tasin-py/KholaBangla/issues</url>
-    <icon type="remote" width="48" height="48">https://github.com/tasin-py/KholaBangla/raw/main/data/48.png</icon>
+    <url type="homepage">https://github.com/tasin-py/KholaBangla-Keyboard</url>
+    <url type="bugtracker">https://github.com/tasin-py/KholaBangla-Keyboard/issues</url>
+    <icon type="remote" width="48" height="48">https://github.com/tasin-py/KholaBangla-Keyboard/raw/main/data/48.png</icon>
 </component>

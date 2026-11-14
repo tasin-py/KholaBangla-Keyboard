@@ -17,7 +17,7 @@
 টার্মিনাল খুলুন, নিচের **একটি মাত্র কমান্ড** পেস্ট করুন এবং <kbd>Enter</kbd> চাপুন:
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh)"
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh)"
 ```
 
 ইনস্টলারটি নিজে থেকেই আপনার ডিস্ট্রো, ভার্সন ও প্রসেসর শনাক্ত করবে, সঠিক প্যাকেজ ইনস্টল করবে এবং
@@ -36,10 +36,10 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla/mai
 ### আনইনস্টল
 
 ```bash
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla/main/tools/install.sh)" -- --uninstall
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh 2>/dev/null || wget -qO- https://raw.githubusercontent.com/tasin-py/KholaBangla-Keyboard/main/tools/install.sh)" -- --uninstall
 ```
 
-কোনো সমস্যা হলে দয়া করে একটি [ইস্যু](https://github.com/tasin-py/KholaBangla/issues) খুলুন এবং
+কোনো সমস্যা হলে দয়া করে একটি [ইস্যু](https://github.com/tasin-py/KholaBangla-Keyboard/issues) খুলুন এবং
 `cat /etc/os-release` কমান্ডের আউটপুট দিন।
 
 ## খোলাবাংলায় নতুন কী
