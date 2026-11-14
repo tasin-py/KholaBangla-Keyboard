@@ -9,6 +9,7 @@ license=('GPL3')
 depends=('qt5-base' 'qt5-svg' 'zstd')
 optdepends=('ibus: IBus support' 'fcitx5: Fcitx5 support')
 makedepends=('cmake' 'ninja' 'rust' 'libibus' 'fcitx5')
+options=('!debug')
 build() {
     cmake -S "$srcdir" -B "$srcdir/_build" -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_BOTH=ON
     ninja -C "$srcdir/_build"

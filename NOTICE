@@ -1,0 +1,20 @@
+KholaBangla Keyboard
+Copyright (C) 2026 tasin-py
+
+This program is a modified version of OpenBangla Keyboard
+(https://github.com/OpenBangla/OpenBangla-Keyboard),
+Copyright (C) 2015-2026 Muhammad Mominul Huque and the OpenBangla Keyboard contributors,
+used under the GNU General Public License, version 3 or later (see LICENSE).
+
+Modified by tasin-py starting on 15 November 2026, from the OpenBangla Keyboard
+development branch (3.0.0, commit eea66af). The changes include renaming the
+application, packages, input method engines and files; a new logo; removing the
+Windows and macOS ports; a one-command installer; a best-effort package post-install
+step; an added Qt SVG dependency; and new build, test and release workflows.
+The full history of changes is in this repository's git history.
+
+The original copyright notices in the source files are kept unchanged.
+
+Third-party components keep their own licenses:
+- riti (src/engine/riti): Mozilla Public License 2.0, see src/engine/riti/LICENSE
+- Corrosion (cmake/corrosion-rs): MIT License, see cmake/corrosion-rs/LICENSE

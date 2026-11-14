@@ -69,7 +69,8 @@ makeArch () {
     useradd -m builder
     chown -R builder:builder /build
     sudo -u builder makepkg -fd --skipinteg
-    mv kholabangla-keyboard-*${PKGEXT} ${RELEASE_FILENAME}
+    rm -f kholabangla-keyboard-debug-*${PKGEXT}
+    mv kholabangla-keyboard-[0-9]*${PKGEXT} "${RELEASE_FILENAME}"
     RELEASE_FILE=$(realpath "${RELEASE_FILENAME}")
 }
 

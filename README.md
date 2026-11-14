@@ -25,6 +25,7 @@ National/Jatiya, Bornona, Avro Easy, Khipro) and typing automation tools. It wor
 - [Supported distributions](#supported-distributions)
 - [Installer options](#installer-options)
 - [Using KholaBangla Keyboard](#using-kholabangla-keyboard)
+- [What's new in KholaBangla](#whats-new-in-kholabangla)
 - [Features](#features)
 - [Uninstall](#uninstall)
 - [Troubleshooting](#troubleshooting)
@@ -91,6 +92,23 @@ Add the options after `--` at the end of the install command, or run the script 
 - **Choose a layout:** click the KholaBangla icon in the top bar, or open **KholaBangla Keyboard** from your app menu.
 - **Avro Phonetic:** type Bangla using English letters, for example `ami banglay gan gai` → `আমি বাংলায় গান গাই`.
   Suggestions appear as you type; press <kbd>Space</kbd> or <kbd>Enter</kbd> to accept.
+
+## What's new in KholaBangla
+
+KholaBangla Keyboard starts from the OpenBangla Keyboard 3.0 development code and focuses on making it
+easy to install and use on any Linux system:
+
+- **One-command install.** The installer detects your distribution, version and processor, installs the
+  right package and dependencies, and sets up IBus or Fcitx5 for your desktop. It does not replace an
+  input method you already use.
+- **More systems covered.** Ready-made packages for Ubuntu, Debian (and Kali), Fedora, openSUSE Tumbleweed
+  and Arch Linux, on both x86_64 and ARM64.
+- **Safer installs.** Installing the package no longer fails when there is no desktop session (SSH,
+  containers, automated setups).
+- **Fixed missing dependency.** Qt SVG is now required by the package, so icons always show.
+- **The 3.0 features, ready to use.** The new light/dark design, the Avro-style Top Bar and the Khipro
+  layout from the 3.0 development version, packaged and released.
+- **Linux only**, with its own tested build, installer tests and release workflow.
 
 ## Features
 
@@ -180,3 +198,4 @@ It also builds on:
 ## License
 
 KholaBangla Keyboard is free software, released under the [GNU General Public License v3.0](LICENSE) or later.
+It is a modified version of OpenBangla Keyboard; see [NOTICE](NOTICE) for what was changed.
