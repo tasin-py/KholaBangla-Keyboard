@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v5
       - name: build package
         shell: bash
-        run: ./tools/build.sh
+        run: bash ./tools/build.sh
       - name: artifact name
         id: name
         shell: bash
