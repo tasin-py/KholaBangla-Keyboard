@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- filename: kholabangla.xml -->
+<!-- XML specification for iBus -->
+<component>
+    <name>org.freedesktop.IBus.KholaBangla</name>
+    <description>KholaBangla Keyboard</description>
+    <exec>@LIBEXECDIR@/ibus-engine-kholabangla --ibus</exec>
+    <version>@PROJECT_VERSION@</version>
+    <author>See About Dialog</author>
+    <license>GPL 3</license>
+    <homepage>https://github.com/tasin-py/KholaBangla</homepage>
+    <textdomain>kholabangla-keyboard</textdomain>
+    <engines>
+        <engine>
+            <name>KholaBangla</name>
+            <language>bn</language>
+            <license>GPL 3</license>
+            <author>See AboutBox</author>
+            <icon>@PROJECT_DATADIR@/icons/KholaBangla-Keyboard.png</icon>
+            <layout>default</layout>
+            <longname>KholaBangla Keyboard</longname>
+            <description>KholaBangla Keyboard IME for iBus</description>
+            <rank>0</rank>
+        </engine>
+    </engines>
+</component>

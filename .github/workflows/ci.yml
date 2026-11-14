@@ -1,0 +1,33 @@
+name: CI
+
+# Builds KholaBangla Keyboard and tests the installer on every push.
+on:
+  push:
+    branches: [ '**' ]
+    paths-ignore: [ '**.md', '**.adoc' ]
+  pull_request:
+    paths-ignore: [ '**.md', '**.adoc' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: install build dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get -y install build-essential cmake ninja-build rustc cargo libibus-1.0-dev libfcitx5core-dev libzstd-dev qtbase5-dev qtbase5-dev-tools libqt5svg5-dev
+      - name: build
+        run: |
+          cmake -S . -B build -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_BOTH=ON
+          ninja -C build
+
+  installer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: shellcheck
+        run: shellcheck -S warning tools/install.sh tools/test-install.sh
+      - name: distribution detection tests
+        run: bash tools/test-install.sh

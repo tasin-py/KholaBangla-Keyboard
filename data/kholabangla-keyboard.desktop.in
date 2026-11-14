@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=KholaBangla Keyboard
+Comment=An OpenSource, Unicode compliant Bengali Input Method.
+Exec=@BIN_DIR@/kholabangla-gui %f
+Icon=kholabangla-keyboard
+Type=Application
+Categories=Utility;Application;

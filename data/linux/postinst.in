@@ -1,0 +1,23 @@
+#!/bin/sh
+# Try to add KholaBangla Keyboard to the input sources of the user who is
+# installing it. This needs that user's desktop session, which a package
+# manager doesn't always have (SSH, containers, sudo), so it is only a
+# best-effort step and never makes the installation fail. The one-line
+# installer (tools/install.sh) does it reliably from the user's own session,
+# and users can run `kholabangla-gui --setup-system` themselves at any time.
+
+user="${SUDO_USER:-${PKEXEC_UID:+$(id -nu "$PKEXEC_UID" 2>/dev/null)}}"
+if [ -n "$user" ] && [ "$user" != root ] && command -v runuser >/dev/null 2>&1; then
+    uid=$(id -u "$user" 2>/dev/null)
+    rundir="/run/user/$uid"
+    if [ -n "$uid" ] && [ -S "$rundir/bus" ]; then
+        runuser -u "$user" -- env \
+            XDG_RUNTIME_DIR="$rundir" \
+            DBUS_SESSION_BUS_ADDRESS="unix:path=$rundir/bus" \
+            XDG_CURRENT_DESKTOP="${XDG_CURRENT_DESKTOP:-}" \
+            QT_QPA_PLATFORM=offscreen \
+            timeout 60 @BIN_DIR@/kholabangla-gui --setup-system >/dev/null 2>&1 || true
+    fi
+fi
+
+exit 0

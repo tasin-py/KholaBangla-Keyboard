@@ -1,0 +1,76 @@
+name: Release
+
+# Builds the Linux packages and publishes them as a GitHub release.
+# Run it by pushing a tag that matches version.txt, e.g.:
+#   git tag 1.0.0 && git push origin 1.0.0
+on:
+  push:
+    tags: [ '[0-9]+.[0-9]+.[0-9]+' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  packages:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ "ubuntu-latest", "ubuntu-24.04-arm" ]
+        container: [ "ubuntu:22.04", "ubuntu:24.04", "debian:12", "debian:13", "fedora:41", "fedora:42", "opensuse/tumbleweed", "archlinux:latest" ]
+        exclude:
+          # the Arch Linux image is only published for x86_64
+          - platform: "ubuntu-24.04-arm"
+            container: "archlinux:latest"
+    runs-on: ${{ matrix.platform }}
+    container:
+      image: ${{ matrix.container }}
+      env:
+        DIST: ${{ matrix.container }}
+        DEBIAN_FRONTEND: noninteractive
+    steps:
+      - name: install git
+        run: |
+          if command -v apt-get >/dev/null; then apt-get update -y && apt-get install -y git
+          elif command -v dnf >/dev/null; then dnf install -y git
+          elif command -v zypper >/dev/null; then zypper --non-interactive install git tar gzip
+          elif command -v pacman >/dev/null; then pacman -Syu --noconfirm git sudo
+          fi
+      - uses: actions/checkout@v5
+      - name: build package
+        shell: bash
+        run: ./tools/build.sh
+      - name: artifact name
+        id: name
+        shell: bash
+        run: echo "name=$(echo '${{ matrix.container }}-${{ matrix.platform }}' | sed 's/[:\/]/-/g')" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pkg-${{ steps.name.outputs.name }}
+          path: artifact/*
+
+  release:
+    needs: packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: version
+        id: version
+        run: echo "version=$(head -n1 version.txt)" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pkg-*
+          merge-multiple: true
+          path: packages
+      - name: publish the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          ls -l packages
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            gh release upload "$VERSION" packages/* --clobber
+          else
+            gh release create "$VERSION" packages/* --title "KholaBangla Keyboard $VERSION" \
+              --notes "Install with one command: see the README. Packages for Ubuntu, Debian, Fedora, openSUSE Tumbleweed and Arch Linux (x86_64 and ARM64)."
+          fi
